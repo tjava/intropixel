@@ -1,0 +1,103 @@
+{% extends "../base.html" %}
+
+{% block title %} Intropixel | Faqs {% endblock %}
+
+{% block body %}
+
+    <main id="maincontent" class="page-main">
+        <a id="contentarea" tabindex="-1"></a>
+        <div class="page-title-wrapper">
+            <h1 class="page-title">
+                <span class="base" data-ui-id="page-title-wrapper">Frequently Asked Questions</span>    
+            </h1>
+        </div>
+        <div class="page messages">
+            <div data-placeholder="messages"></div>
+            <div data-bind="scope: 'messages'">
+                <div data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages"></div>
+                <div data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages"></div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column main">
+                <input name="form_key" type="hidden" value="beLV6k3CTy2lM74h">
+                <ul id="faqs" class="faqs-faq-list">
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">How long does it take to render a free or paid video?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">Maximum 3 minutes, please be patient, your video is being rendered freshly each time you submit it. We'll notify by email when your purchases are ready for download.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">I just purchased a video credits package, how can I use my credits?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">You'll get an email confirmation with a personal voucher code inside, also you can find the code on your invoice. Enter the code during checkout in the "Support Code" field for any video product you would like to get at final video quality (up to HD 1080p). After adding the code and clicking -APPLY- the price of the video will drop to 0$, then just click -PLACE ORDER- without being charged. Every video download equals 1 video credit, you may use your credits freely during 1 year.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">What video quality level are your videos?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">Purchased final quality videos are professional-grade HD mp4 video files. We guarantee high-end video quality without any wrong pixels or artifacts. If you find any error please get in touch with our support for free replacement. Free 360p videos are low resolution video files for preview purposes, you might see pixels in the video due to compression.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">Where can I download my purchased videos?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">Directly download your purchase from the Introbrand "My Videos" page. A green "Download" button appears immediately after purchase below the video. If the status is: "file not ready to download yet" please wait for the confirmation email and check back again. Purchases need a longer render time depending on video resolution and complexity. If you don't see your download after 10 minutes, please write to our support.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">What does the license include and where can I use my purchased video?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">You may publish, sell, screen and distribute your purchased videos as part of your media production on any media (online, web, social media, games, broadcast, digital signage, point of sale, e-billboards) unlimited times, worldwide and without restrictions. Free 360p videos are only for personal use on social media.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">Where can I download my free 360p videos?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">When your free 360p video has been rendered, you may download it directly to your computer in the "my videos" section by right-clicking on the video itself and choose "Save as...". If you can't see the "Save as..." dialog, please try another browser.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">I am trying to pay with credit card but I get a "Server Error" message</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">This happens occasionally and means that either your credit card has not enough funds or your bank declined the transaction for security reasons. In this case you might call your credit card issuer to authorize the transaction or just using another credit card solves the issue in most cases. We also offer PayPal for your convenience.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">Can I get a refund for a purchased video?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">Please understand that we can't refund any downloadable videos, there's no way to track downloads for us. If you mistakenly purchased a wrong resolution or frame-rate, or if there's a visible issue within your purchased video, please get in touch with us.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">Why do I need to sign up to use your service?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">We're an official business. Registration with email and password is required for privacy and technical reasons. We need to assign you a personal user account in order to be able to render videos for you. Do not worry, we don't spam and our monthly newsletter can be unsubscribed with 1 click anytime.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">Why do I need to upload a high resolution logo?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">Many of our animations will show your logo very large. To avoid any visible pixel, we want to make sure that your video intro looks top notch. For final purchases in HD or even 4K we recommend uploading only high-resolution png files with transparent background. Of course you can experiment with uploading images or graphics as well, as long as they are PNG or JPG files. In any case the visual size of your logo will stay the same even if you upload a higher resolution of the same logo.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">Where can I get my invoice?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">We collect all your invoices in your user account on our website.</div>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="faqs-faq-item-title" data-role="title">Can I change the color of my logo with the color correct slider?</h3>
+                        <div class="faq-item-content" data-role="content">
+                            <div class="actual-content">No. If you want to change the color of your logo you’ll have to do it before uploading to our site.</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="action"><a class="button link" href="/video-templates.html"><span>get started</span></a></div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

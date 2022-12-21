@@ -1,0 +1,129 @@
+{% load static %}
+<!doctype html>
+<html lang="en-US">
+   <head >
+      <meta charset="utf-8"/>
+      <meta name="description" content="Animated video maker for creating professional-looking promo videos and intros. Create animations with your branding. Fully online in seconds."/>
+      <meta name="keywords" content="video creator, video animation creator, video animation maker, intro maker, intro video, intropixel"/>
+      <meta name="robots" content="INDEX,FOLLOW"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+      <title>{% block title %}{% endblock %}</title>
+      <link  rel="stylesheet" type="text/css"  media="all" href="https://www.introbrand.com/static/frontend/Introbrand/default/en_US/css/styles-m.css" />
+      <link  rel="stylesheet" type="text/css"  media="all" href="{% static 'assets/css/calendar.min.css' %}" />
+      <link  rel="stylesheet" type="text/css"  media="screen and (min-width: 768px)" href="{% static 'assets/css/styles-l.css' %}" />
+      <link  rel="stylesheet" type="text/css"  media="print" href="{% static 'assets/css/print.css' %}" />
+      <link  rel="stylesheet" type="text/css"  async="async" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+      <link  rel="stylesheet" type="text/css"  async="async" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
+      <link  rel="stylesheet" type="text/css"  media="all" href="{% static 'assets/css/styles.css' %}" />
+      <link  rel="icon" type="image/x-icon" href="{% static 'assets/icons/intropixel-favicon.png' %}" />
+      <link  rel="icon" type="image/x-icon" href="{% static 'assets/icons/favicon.ico' %}" />
+      <link  rel="shortcut icon" type="image/x-icon" href="{% static 'assets/icons/intropixel-favicon.png' %}" />
+      <script  type="text/javascript" async  src="{% static 'assets/js/menu.js' %}"></script>
+      
+   </head>
+   {% url 'index' as index %}
+   {% url 'templates' as templates %}
+   {% url 'pricing' as pricing %}
+   {% url 'faqs' as faqs %}
+   {% url 'contact' as contact %}
+    <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "assets/images/loader-2.gif"}}'{% if request.path == index %}  class="cms-home cms-index-index page-layout-1column" {% elif request.path == templates %} class="page-with-filter page-products categorypath-video-templates category-video-templates catalog-category-view page-layout-1column" {% else %} class="cms-pricing cms-page-view page-layout-1column" {% endif %}>
+
+        <div class="page-wrapper">
+            <header class="page-header">
+                <div class="panel wrapper">
+                <div class="panel header">
+                    <ul class="header links">
+                        <li class="authorization-link" data-label="or">
+                            <a href="/login">
+                            <div class="icon"></div>
+                            Sign in    
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="action skip contentarea" href="#contentarea"><span>Skip to Content</span></a>
+                    <div class="sections nav-sections">
+                        <div class="section-items nav-sections-items" data-mage-init='{"tabs":{"openedState":"active"}}'>
+                            <div class="section-item-title nav-sections-item-title" data-role="collapsible">
+                            <a class="nav-sections-item-switch" data-toggle="switch" href="#store.menu">Menu</a>
+                            </div>
+                            <div class="section-item-content nav-sections-item-content" id="store.menu" data-role="content">
+                            <nav class="navigation" data-action="navigation">
+                                <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"},"delay":0}}'>
+                                    <li {% if request.path == templates %}style="background-color: white;"{% endif %} class='level0 nav-1 first level-top ui-menu-item' role='presentation'><a id="ui-id-1" class="level-top ui-corner-all" tabindex="-1" href="{% url 'templates' %}"><span>Templates</span></a></li>
+                                    <li {% if request.path == pricing %}style="background-color: white;"{% endif %} class='level0 nav-3 level-top ui-menu-item' role='presentation'><a id="ui-id-3" class="level-top ui-corner-all" tabindex="-1" href="{% url 'pricing' %}"> <span>Pricing</span> </a></li>
+                                    <li {% if request.path == faqs %}style="background-color: white;"{% endif %} class='level0 nav-2 level-top ui-menu-item' role='presentation'><a id="ui-id-2" class="level-top ui-corner-all" tabindex="-2" href="{% url 'faqs' %}"><span>Help</span></a></li>
+                                    <li {% if request.path == contact %}style="background-color: white;"{% endif %} class='level0 nav-4 last level-top ui-menu-item' role='presentation'><a id="ui-id-4" class="level-top ui-corner-all" tabindex="-1" href="{% url 'contact' %}"> <span>Contact</span> </a></li>
+                                </ul>
+                            </nav>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <span data-action="toggle-nav" class="action nav-toggle">
+                        <div class="icon"></div>
+                        <span>Toggle Nav</span>
+                    </span>
+                    <strong class="logo">
+                        <a href="/"><img src="{% static 'assets/images/logo.png' %}" alt="logo-introbrand" width="189" height="64"/></a>
+                    </strong>
+                </div>
+                </div>
+                <div class="main-banner block">
+                <div class="homepage-banner">
+                        {% block banner %}
+                        {% endblock %}
+                </div>
+                </div>
+            </header>
+
+            {% block body %}
+            {% endblock %}
+
+            <footer class="page-footer">
+                <div class="footer content">
+                    <div class="block company">
+                        <p class="title">SUPPORT</p>
+                        <div class="content">
+                            <ul class="footer links">
+                                <li><a href="/faqs">Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="block information">
+                        <p class="title">Useful links</p>
+                        <div class="content">
+                            <ul class="footer links">
+                                <li><a href="/templates">Templates</a></li>
+                                <li><a href="/pricing">Pricing</a></li>
+                                <li><a href="/login">Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="block payment">
+                        <p class="title">CONTACT</p>
+                        <div class="content">
+                            <ul class="footer links">
+                                <li><a href="/contact">Contact Us</a></li>
+                            </ul>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="block follow-us">
+                        <p class="title">Social</p>
+                        <div class="content">
+                            <ul class="footer links">
+                                <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                                <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                                <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <small class="copyright">
+                    <span></span>
+                    </small>
+                </div>
+            </footer>
+            <div class="copyright">© 2022 Intropixel LLC, SG</div>
+        </div>
+    </body>
+</html>

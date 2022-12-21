@@ -45,6 +45,7 @@ LOCAL_APPS = [
     "apps.users",
     "apps.profiles",
     "apps.videos",
+    "apps.public",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PERTY_APPS + LOCAL_APPS
@@ -64,7 +65,9 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / "apps/templates/",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

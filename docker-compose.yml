@@ -43,7 +43,7 @@ services:
   #     context: ./docker/local/nginx
   #     dockerfile: Dockerfile
   #   ports:
-  #     - "8080:80"
+  #     - "443:80"
   #   networks:
   #     - intropixel-network
 

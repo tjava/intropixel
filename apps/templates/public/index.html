@@ -1,0 +1,200 @@
+{% extends "../base.html" %}
+
+{% block title %} Create Animated Pixel Videos for Businesses and Brands | Intropixel {% endblock %}
+
+{% block banner %} 
+
+	<div class="video-container">
+		<video id="banner_video" width="1920" height="1080" autoplay="autoplay" loop="loop" style="display:none;" muted>
+			<source data-src="https://www.introbrand.com/media//wysiwyg/default/animation-maker-intro.mp4" type="video/mp4">
+		</video>
+		<img id="banner_image" class="banner-image" height="1080px" width="1920px" src="https://www.introbrand.com/media/wysiwyg/default/introbrand-animation-video-maker-mobile.jpg" style="display:none"/>
+		<script type="text/javascript">
+			function detectiPhone() {
+				var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+				if (/windows phone/i.test(userAgent)) {
+					return "wp";
+				}
+				if (/android/i.test(userAgent)) {
+					return "an";
+				}
+				if (/iPhone/.test(userAgent) && !window.MSStream) {
+					return "ios";
+				}
+				return "unknown";
+			}
+			
+			// window.addEventListener("load", function() {
+			var video = document.getElementById('banner_video');
+			if(detectiPhone() == 'ios' || detectiPhone() == 'an' || detectiPhone() == 'wp'){
+				document.getElementById('banner_image').style.display = "block";
+			} else {
+				video.style.display = "block";
+				var children = video.getElementsByTagName("source");
+				for (var i = 0; i < children.length; ++i) {
+					children[i].src = children[i].dataset.src;
+				}
+				video.load();
+			}
+			// })
+		</script>
+		<div class="video-overlay">
+			<h1 style="text-align: center; color: white; text-shadow: 1px 1px 120px #202020; font-size: 3.5em; font-weight: 1000;">Make Animated Videos <br />for Business and Brands</h1>
+			<h4 style="text-align: center; font-size: 1.7em; font-weight: 400; text-shadow: 1px 1px 50px #202020; margin-top: 1.1em; margin-bottom: 3em;">Create video animations with your branding. Fully online in a few clicks!</h4>
+			<div class="action"><a class="get-started button link" href="/"><span>VIEW TEMPLATES</span></a></div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block body %}
+
+	<main id="maincontent" class="page-main">
+		<a id="contentarea" tabindex="-1"></a>
+		<div class="columns">
+			<div class="column main">
+				<h2 style="text-align: center; font-size: 2.5em; color: #000000; font-weight: 800; margin-bottom: 2em; margin-top: 1em;">Video Intros and Animated Logos or Text<br />for Your Product, Service or Business</h2>
+				<div class="top-description" style="max-width: 750px; text-align: left;">
+					<p>Having a high-quality <a href="https://www.introbrand.com/logo-animation/">logo or text animation</a>, <a title="video intro maker" href="https://www.introbrand.com/youtube-intro-maker/" target="_self">video intro</a> or outro for your videos is crucial. These short animated motion graphics act like a business card for your videos on your website, social- and promo video&nbsp;productions.</p>
+					<p><br /><br /></p>
+				</div>
+				<div class="best-seller-block">
+					<div class="best-seller" data-mage-init='{"listvideo":{"videoContainer":".best-seller","videoElement":".item-video"}}'>
+						<div class="item">
+							<a href="https://www.introbrand.com/catalog/category/view/s/video-templates/id/39/?toDetail=aHR0cHM6Ly93d3cuaW50cm9icmFuZC5jb20vdmlkZW8vaW5kZXgvZGV0YWlsL3Byb2R1Y3RfaWQvNjcv">
+								<video muted="muted" width="319" height="179" class="item-video" preload="none" poster="https://www.introbrand.com/media/catalog/product/cache/small_image/319x179/beff4985b56e3afdbeabfc89641a4582/t/y/type-animation-blockload-thumb.jpg">
+									<source src="https://www.introbrand.com/media/downloadable/files/samples/t/y/type-animation-blockload-mini.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+								</video>
+							</a>
+						</div>
+						<div class="item">
+							<a href="https://www.introbrand.com/catalog/category/view/s/video-templates/id/39/?toDetail=aHR0cHM6Ly93d3cuaW50cm9icmFuZC5jb20vdmlkZW8vaW5kZXgvZGV0YWlsL3Byb2R1Y3RfaWQvMTIzLw==">
+								<video muted="muted" width="319" height="179" class="item-video" preload="none" poster="https://www.introbrand.com/media/catalog/product/cache/small_image/319x179/beff4985b56e3afdbeabfc89641a4582/l/o/logo-intro-ember-bash-thumb.jpg">
+									<source src="https://www.introbrand.com/media/downloadable/files/samples/l/o/logo-intro-emberbash-mini.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+								</video>
+							</a>
+						</div>
+						<div class="item">
+							<a href="https://www.introbrand.com/catalog/category/view/s/video-templates/id/39/?toDetail=aHR0cHM6Ly93d3cuaW50cm9icmFuZC5jb20vdmlkZW8vaW5kZXgvZGV0YWlsL3Byb2R1Y3RfaWQvMTM0Lw==">
+								<video muted="muted" width="319" height="179" class="item-video" preload="none" poster="https://www.introbrand.com/media/catalog/product/cache/small_image/319x179/beff4985b56e3afdbeabfc89641a4582/p/a/paintsplash-logo-reveal-base.jpg">
+									<source src="https://www.introbrand.com/media/downloadable/files/samples/p/a/paintsplash-logo-reveal-mini.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+								</video>
+							</a>
+						</div>
+						<div class="item">
+							<a href="https://www.introbrand.com/catalog/category/view/s/video-templates/id/39/?toDetail=aHR0cHM6Ly93d3cuaW50cm9icmFuZC5jb20vdmlkZW8vaW5kZXgvZGV0YWlsL3Byb2R1Y3RfaWQvMTY3Lw==">
+								<video muted="muted" width="319" height="179" class="item-video" preload="none" poster="https://www.introbrand.com/media/catalog/product/cache/small_image/319x179/beff4985b56e3afdbeabfc89641a4582/b/a/basic-3d-logo-thumb.jpg">
+									<source src="https://www.introbrand.com/media/downloadable/files/samples/b/a/basic-3d-logo-mini.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+								</video>
+							</a>
+						</div>
+					</div>
+				</div>
+				</p>
+				<p>
+				<p></p>
+				<h2 style="text-align: center; font-size: 2.5em; font-weight: 800; color: #000000; margin-top: 2em; margin-bottom: 1em;">Create Animations in Minutes<br />via Online Templates</h2>
+				<div class="top-description">
+					<div class="top-description" style="max-width: 750px; text-align: left;">
+						<p>Our predesigned <a title="logo animation templates" href="https://www.introbrand.com/video-templates.html/" target="_self">animation templates</a> enable you to create professionally animated logos/text, <a href="https://www.introbrand.com/youtube-intro-maker/">YouTube intros</a> and outros in a few clicks! Preview your video for free and try different animation styles. No software or design skills needed.</p>
+						<br />
+						<div class="action"><a class="get-started button link" href="https://www.introbrand.com/video-templates.html/"><span>View Templates</span></a></div>
+						<p></p>
+						<br /><br />
+					</div>
+				</div>
+				</p>
+				<p>
+				<div id="how-it-works" class="how-it-works-block cms-block">
+					<h2 style="text-align: center; font-size: 2.5em; color: #000000; font-weight: 800; margin-top: 7rem; margin-bottom: 1em;">Customize Your Video<br />in 3 Easy Steps:</h2>
+					<ul>
+						<li>
+							<!-- <span class="choose icon"></span> -->
+							<p><strong><a href="https://www.introbrand.com/video-templates.html/">1. PICK A TEMPLATE</a></strong></p>
+						</li>
+						<li>
+							<!-- <span class="customize icon"></span> -->
+							<p><strong><a href="https://www.introbrand.com/video-templates.html/">2. ADD YOUR LOGO/TEXT</a></strong></p>
+						</li>
+						<li>
+							<!-- <span class="download icon"></span> -->
+							<p><strong><a href="https://www.introbrand.com/video/customize/downloads/">3. GET YOUR VIDEO</a></strong></p>
+						</li>
+					</ul>
+					<br /><br /><br />
+				</div>
+				<p></p>
+				<p></p>
+				</p>
+				<p>
+				<p><br /><br /></p>
+				<h2 style="text-align: center; font-size: 2.5em; font-weight: 800; color: #000000; margin-top: 2em; margin-bottom: 1em;">Animated Videos for Promo<br />and Marketing</h2>
+				<div class="top-description" style="max-width: 750px; text-align: left;">
+					<p>All our animated videos and motion graphics templates are designed for professional use, for example:</p>
+					<br />
+					<ul style="font-size: 0.9em;">
+						<li>Videos for Small Businesses, Organizations, Institutions, Clubs, Educational</li>
+						<li>Product and Service Videos, Marketing Videos, Personal Branding</li>
+						<li>Intros for YouTube, Websites, Gaming, Entrepreneurs Vlogs, E-Commerce</li>
+						<li>Videos for Media, Event, Show, Promo Videos, Video Advertising, VR</li>
+					</ul>
+				</div>
+				</p>
+				<p>
+				<p><br /><br /></p>
+				<div class="features-block cms-block">
+					<h2 style="text-align: center; font-size: 2.5em; font-weight: 800; color: #000000; margin-top: 1em; margin-bottom: 1em;">Fast Online Video Creator<br />with Professional Features</h2>
+					<ul>
+						<li>
+							<!-- <span class="creative-branding icon"></span> -->
+							<h3>Free Preview</h3>
+							<p>All our animations can be previewed instantly for free in web video resolution</p>
+						</li>
+						<li>
+							<!-- <span class="fast-and-quality icon"></span> -->
+							<h3>Online Tool</h3>
+							<p><span>Create your own animation in just 3 minutes. No animation software needed</span></p>
+						</li>
+						<li>
+							<!-- <span class="easy-to-use icon"></span> -->
+							<h3>Easy and Safe</h3>
+							<p>Works in your browser. No restrictions or plans. Directly download your files</p>
+						</li>
+						<li>
+							<!-- <span class="music-included icon"></span> -->
+							<h3>Customizable</h3>
+							<p>Personalize your animation by adding your own logo and adjusting colors</p>
+						</li>
+						<li>
+							<!-- <span class="pro-settings icon"></span> -->
+							<h3>Professional-Grade</h3>
+							<p>All animations are available in brilliant studio quality HD up to 4K resolution</p>
+						</li>
+						<li>
+							<!-- <span class="unlimited-lifetime-licence icon"></span> -->
+							<h3>Total Freedom</h3>
+							<p>Commercial license is included in purchase. Use in any media and forever</p>
+						</li>
+					</ul>
+					<p>&nbsp;</p>
+				</div>
+				</p>
+				<p></p>
+				<p></p>
+				<p>
+				<p><br /><br /></p>
+				<h2 style="text-align: center; font-size: 2.5em; font-weight: 800; color: #000000; margin-top: 1em; margin-bottom: 1em;">Start Now and Create an Animation<br />with Live Video Preview</h2>
+				<div class="top-description">
+					<div class="top-description" style="max-width: 750px; text-align: left;">
+						<p>Browse our gallery, find an animation you like and upload your logo or enter text. Adjust colors, add free music and get your free preview video in a few minutes, you can try different animations for free.</p>
+					</div>
+					<p><br /><br /></p>
+					<div class="action"><a class="get-started button link" href="https://www.introbrand.com/video-templates.html/"><span>View Templates</span></a></div>
+					<p><br /><br /></p>
+				</div>
+				</p>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}
