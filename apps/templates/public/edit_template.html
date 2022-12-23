@@ -1,0 +1,68 @@
+{% extends "../base.html" %}
+
+{% block title %} Intropixel | Edit Templates {% endblock %}
+
+{% block body %}
+
+    <main id="maincontent" class="page-main">
+        <a id="contentarea" tabindex="-1"></a>
+        <div class="page-title-wrapper">
+            <h1 class="page-title"
+                >
+                <span class="base" data-ui-id="page-title-wrapper" >Customize Video</span>    
+            </h1>
+        </div>
+        <div class="columns">
+            <div class="column main">
+                <div class="steps-container" data-mage-init='{"steps":{}}'>
+                    <div class="step-1" data-title ="Customize Video">
+                        <div class="video-customize-container" data-mage-init='{"canvas": {"canvasBackground":"https:\/\/www.introbrand.com\/media\/catalog\/product\/cache\/image\/700x394\/beff4985b56e3afdbeabfc89641a4582\/t\/y\/type-animation-blockload-base.jpg","imageHeight":"394","imageWidth":"700","fontFamily":"Heebo:700","controls":{"text":{"layer":2,"type":"text","min":"2","max":"30","default":"50","coordinates":"350\/171","color_control":"text_color"},"slogan":{"layer":3,"type":"sub_text","min":"0","max":"72","default":"19","coordinates":"350\/310","color_control":"slogan_color"},"adjust_video_color":{"layer":1,"type":"color_correct","min":"-180","max":"180","default":"0","coordinates":""},"background":{"layer":1,"type":"background","min":null,"max":null,"default":null,"coordinates":"","color_control":"background_color"}},"preview_values":null}}'>
+                            <div class="canvas-block">
+                                <canvas id="video-customizer-layer-1" width="700px" height="394px" style="position: absolute; z-index: 1;"></canvas>
+                                <canvas id="video-customizer-layer-2" width="700px" height="394px" style="position: absolute; z-index: 2;"></canvas>
+                                <canvas id="video-customizer-layer-3" width="700px" height="394px" style="position: absolute; z-index: 2;"></canvas>
+                            </div>
+                            <div class="canvas-options-block">
+                                <form id="video-options" action="/" method='get' enctype="multipart/form-data">
+                                    <br>
+                                    <div class="option text-block">
+                                        <input name="options[4][value]" id="text"
+                                            class="input-text required-entry validate-min-length minimum-length-2 maximum-length-30" 
+                                            type="text" 
+                                            placeholder="Enter Text"
+                                            maxlength="30" 
+                                            minlength="2" 
+                                            />
+                                        <input name="options[4][type]" type="hidden" value="text" />
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="option color-container">
+                                        <label>Custom Colors</label>
+                                        <div class="color-block">
+                                            <input name="options[4][color]" id="text_color" class="color-picker ignore" type="hidden" data-target="text" data-layer="2" value="0.5,0.5,0.5" data-color="#808080">
+                                            <span class="color-fill" data-input="text_color"></span>
+                                            <label for="text_color">Text</label>
+                                        </div>
+                                        <div class="color-block">
+                                            <input name="options[8][color]" id="background_color" class="color-picker ignore" type="hidden" data-target="background" data-layer="1" value="0.5,0.5,0.5" data-color="#808080">
+                                            <span class="color-fill" data-input="background_color"></span>
+                                            <label for="background_color">Background</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <input style="height: 50px;" type="submit" class="action primary next">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

@@ -9,6 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
       <title>{% block title %}{% endblock %}</title>
       <link  rel="stylesheet" type="text/css"  media="all" href="https://www.introbrand.com/static/frontend/Introbrand/default/en_US/css/styles-m.css" />
+      <link  rel="stylesheet" type="text/css"  media="all" href="{% static 'assets/css/colpick.css' %}" />
       <link  rel="stylesheet" type="text/css"  media="all" href="{% static 'assets/css/calendar.min.css' %}" />
       <link  rel="stylesheet" type="text/css"  media="screen and (min-width: 768px)" href="{% static 'assets/css/styles-l.css' %}" />
       <link  rel="stylesheet" type="text/css"  media="print" href="{% static 'assets/css/print.css' %}" />
@@ -18,15 +19,19 @@
       <link  rel="icon" type="image/x-icon" href="{% static 'assets/icons/intropixel-favicon.png' %}" />
       <link  rel="icon" type="image/x-icon" href="{% static 'assets/icons/favicon.ico' %}" />
       <link  rel="shortcut icon" type="image/x-icon" href="{% static 'assets/icons/intropixel-favicon.png' %}" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script  type="text/javascript" async  src="{% static 'assets/js/menu.js' %}"></script>
+      <script  type="text/javascript" async  src="https://www.introbrand.com/static/_cache/merged/d589a756ffbcc83b25e2ee1cebd78824.js"></script>
       
    </head>
    {% url 'index' as index %}
    {% url 'templates' as templates %}
+   {% url 'edit_template' as edit_template %}
    {% url 'pricing' as pricing %}
    {% url 'faqs' as faqs %}
    {% url 'contact' as contact %}
-    <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "assets/images/loader-2.gif"}}'{% if request.path == index %}  class="cms-home cms-index-index page-layout-1column" {% elif request.path == templates %} class="page-with-filter page-products categorypath-video-templates category-video-templates catalog-category-view page-layout-1column" {% else %} class="cms-pricing cms-page-view page-layout-1column" {% endif %}>
+   {% url 'login' as login %}
+    <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "assets/images/loader-2.gif"}}'{% if request.path == index or request.path == edit_template %}  class="cms-home cms-index-index page-layout-1column" {% elif request.path == templates %} class="page-with-filter page-products categorypath-video-templates category-video-templates catalog-category-view page-layout-1column" {% else %} class="cms-pricing cms-page-view page-layout-1column" {% endif %}>
 
         <div class="page-wrapper">
             <header class="page-header">
@@ -34,9 +39,51 @@
                 <div class="panel header">
                     <ul class="header links">
                         <li class="authorization-link" data-label="or">
-                            <a href="/login">
+                            <a {% if request.path == login %}style="color: white;"{% endif %} href="{% url 'login' %}">
                             <div class="icon"></div>
-                            Sign in    
+                            Log in    
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="header links">
+                        <li class="customer-welcome">
+                            <span class=""
+                            style="color: white; font-size:18px"
+                            role="link"
+                            tabindex="0"
+                            data-mage-init='{"dropdown":{}}'
+                            data-toggle="dropdown"
+                            data-trigger-keypress-button="true"
+                            data-bind="scope: 'customer'">
+                                <i class="fa fa-user-circle-o" tabindex="-1" data-action="customer-menu-toggle" style="color: white; font-size:28px"></i>
+                                <i class="fa fa-sort-down" tabindex="-1" data-action="customer-menu-toggle" style="color: white; font-size:38px"></i>
+                                
+                            </span>
+                            <div class="customer-menu" data-target="dropdown">
+                                <ul class="header links">
+                                    <li><a href="/" >My Videos</a></li>
+                                    <li><a href="/" >Invoices</a></li>
+                                    <li class="link wishlist" data-bind="scope: 'wishlist'">
+                                        <a href="/">
+                                            Favorites        <!-- ko if: wishlist().counter -->
+                                            <span data-bind="text: wishlist().counter" class="counter qty"></span>
+                                            <!-- /ko -->
+                                        </a>
+                                    </li>
+                                    <li><a href="/" >Settings</a></li>
+                                    <li class="authorization-link logged-in" data-label="or">
+                                        <a href="/">
+                                            <div class="icon"></div>
+                                            Sign out    
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="authorization-link logged-in" data-label="or">
+                            <a href="/">
+                                <div class="icon"></div>
+                                Sign out    
                             </a>
                         </li>
                     </ul>
@@ -49,10 +96,10 @@
                             <div class="section-item-content nav-sections-item-content" id="store.menu" data-role="content">
                             <nav class="navigation" data-action="navigation">
                                 <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"},"delay":0}}'>
-                                    <li {% if request.path == templates %}style="background-color: white;"{% endif %} class='level0 nav-1 first level-top ui-menu-item' role='presentation'><a id="ui-id-1" class="level-top ui-corner-all" tabindex="-1" href="{% url 'templates' %}"><span>Templates</span></a></li>
-                                    <li {% if request.path == pricing %}style="background-color: white;"{% endif %} class='level0 nav-3 level-top ui-menu-item' role='presentation'><a id="ui-id-3" class="level-top ui-corner-all" tabindex="-1" href="{% url 'pricing' %}"> <span>Pricing</span> </a></li>
-                                    <li {% if request.path == faqs %}style="background-color: white;"{% endif %} class='level0 nav-2 level-top ui-menu-item' role='presentation'><a id="ui-id-2" class="level-top ui-corner-all" tabindex="-2" href="{% url 'faqs' %}"><span>Help</span></a></li>
-                                    <li {% if request.path == contact %}style="background-color: white;"{% endif %} class='level0 nav-4 last level-top ui-menu-item' role='presentation'><a id="ui-id-4" class="level-top ui-corner-all" tabindex="-1" href="{% url 'contact' %}"> <span>Contact</span> </a></li>
+                                    <li class='level0 nav-1 first level-top ui-menu-item' role='presentation'><a {% if request.path == templates %}style="color: white;"{% endif %} id="ui-id-1" class="level-top ui-corner-all" tabindex="-1" href="{% url 'templates' %}"><span>Templates</span></a></li>
+                                    <li class='level0 nav-3 level-top ui-menu-item' role='presentation'><a {% if request.path == pricing %}style="color: white;"{% endif %} id="ui-id-3" class="level-top ui-corner-all" tabindex="-1" href="{% url 'pricing' %}"> <span>Pricing</span> </a></li>
+                                    <li class='level0 nav-2 level-top ui-menu-item' role='presentation'><a {% if request.path == faqs %}style="color: white;"{% endif %} id="ui-id-2" class="level-top ui-corner-all" tabindex="-2" href="{% url 'faqs' %}"><span>Help</span></a></li>
+                                    <li class='level0 nav-4 last level-top ui-menu-item' role='presentation'><a {% if request.path == contact %}style="color: white;"{% endif %} id="ui-id-4" class="level-top ui-corner-all" tabindex="-1" href="{% url 'contact' %}"> <span>Contact</span> </a></li>
                                 </ul>
                             </nav>
                             
@@ -85,7 +132,7 @@
                         <p class="title">SUPPORT</p>
                         <div class="content">
                             <ul class="footer links">
-                                <li><a href="/faqs">Help</a></li>
+                                <li><a href="{% url 'faqs' %}">Help</a></li>
                             </ul>
                         </div>
                     </div>
@@ -93,9 +140,9 @@
                         <p class="title">Useful links</p>
                         <div class="content">
                             <ul class="footer links">
-                                <li><a href="/templates">Templates</a></li>
-                                <li><a href="/pricing">Pricing</a></li>
-                                <li><a href="/login">Login</a></li>
+                                <li><a href="{% url 'templates' %}">Templates</a></li>
+                                <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                                <li><a href="{% url 'login' %}">Login</a></li>
                             </ul>
                         </div>
                     </div>

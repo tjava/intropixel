@@ -3,26 +3,31 @@ from django.http import HttpResponse
 from django.views import View
 
 # Create your views here.
-class index(View):
+class Index(View):
     def get(self, request):
         return render(request, "public/index.html")
 
 
-class templates(View):
+class Templates(View):
     def get(self, request):
         return render(request, "public/templates.html")
 
 
-class pricing(View):
+class EditTemplate(View):
+    def get(self, request):
+        return render(request, "public/edit_template.html")
+
+
+class Pricing(View):
     def get(self, request):
         return render(request, "public/pricing.html")
 
 
-class faqs(View):
+class Faqs(View):
     def get(self, request):
         return render(request, "public/faqs.html")
 
 
-class contact(View):
+class Contact(View):
     def get(self, request):
         return render(request, "public/contact.html")

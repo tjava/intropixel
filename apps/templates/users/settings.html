@@ -1,0 +1,70 @@
+{% extends "../base.html" %}
+
+{% block title %} Intropixel | Settings {% endblock %}
+
+{% block body %}
+
+    <main id="maincontent" class="page-main">
+        <a id="contentarea" tabindex="-1"></a>
+        <div class="page-title-wrapper">
+            <h1 class="page-title">
+                <span class="base" data-ui-id="page-title-wrapper">My Settings</span>    
+            </h1>
+        </div>
+        <div class="page messages">
+            <div data-placeholder="messages"></div>
+            <div data-bind="scope: 'messages'">
+                <div data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages"></div>
+                <div data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages"></div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column main">
+                <input name="form_key" type="hidden" value="beLV6k3CTy2lM74h">
+                <h2 class=""><span>Account Information</span></h2>
+                <div class="login-container">
+                    <div class="block block-customer-login">
+                        <div class="block-content" aria-labelledby="block-customer-login-heading">
+                            <form class="form form-login" action="https://www.introbrand.com/customer/account/loginPost/" method="post" id="login-form" novalidate="novalidate">
+                                <input name="form_key" type="hidden" value="beLV6k3CTy2lM74h">            
+                                <fieldset class="fieldset login" data-hasrequired="* Required Fields">
+                                    <div class="field note"></div>
+                                    <div class="field required">
+                                        <label class="label" for="first_name"><span>First Name</span></label>
+                                        <div class="control">
+                                            <input name="first_name" value="" autocomplete="off" id="first_name" type="text" class="input-text" aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="field required">
+                                        <label class="label" for="last_name"><span>Last Name</span></label>
+                                        <div class="control">
+                                            <input name="last_name" value="" autocomplete="off" id="last_name" type="text" class="input-text" aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="field required">
+                                        <label class="label" for="email"><span>Email</span></label>
+                                        <div class="control">
+                                            <input name="email" value="" autocomplete="off" id="email" type="email" class="input-text" aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="field password required">
+                                        <label for="pass" class="label"><span>Password</span></label>
+                                        <div class="control">
+                                            <input name="login[password]" type="password" autocomplete="off" class="input-text" id="pass" title="Password" data-validate="{required:true}" aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="actions-toolbar">
+                                        <div class="primary"><button type="submit" class="action login primary" name="send" id="send2"><span>Update</span></button></div>
+                                        
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
